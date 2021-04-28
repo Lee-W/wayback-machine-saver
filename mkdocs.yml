@@ -1,0 +1,9 @@
+site_name: Internet Archiver
+nav:
+  - Home: README.md
+  - Contributing: contributing.md
+theme:
+  name: 'material'
+repo_url: https://github.com/Lee-W/internet_archiver
+remote_branch: gh-pages
+remote_name: origin
