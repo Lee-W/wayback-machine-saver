@@ -101,6 +101,7 @@ repository = "https://github.com/Lee-W/internet_archiver"
 python = "^3.8"
 httpx = "^0.18.0"
 click = "^7.1.2"
+tqdm = "^4.60.0"
 
 [tool.poetry.dev-dependencies]
 # task management
