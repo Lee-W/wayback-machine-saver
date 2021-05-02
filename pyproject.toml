@@ -89,7 +89,7 @@ norecursedirs = [
     ]
 
 [tool.poetry]
-name = "internet_archiver"
+name = "wayback_machine_saver"
 version = "0.1.0"
 authors = ["Wei Lee <weilee.rx@gmail.com>"]
 description = "Python tool for archiving web pages through Internet Archive Wayback Machine "

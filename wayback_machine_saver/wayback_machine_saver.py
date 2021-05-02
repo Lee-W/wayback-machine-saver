@@ -9,18 +9,15 @@ INTERNET_ARCHIVE_SAVE_URL = urljoin(INTERNET_ARCHIVE_DOMAIN, "save/")
 INTERNET_ARCHIVE_WEB_URL = urljoin(INTERNET_ARCHIVE_DOMAIN, "web/")
 
 
-def save_url(url: str) -> httpx.Response:
+def save_page(url: str) -> httpx.Response:
     req_url = f"{INTERNET_ARCHIVE_SAVE_URL}/{url}"
-    req = httpx.post(
-        req_url,
-        data={"url": url, "capture_all": "on"},
-    )
+    req = httpx.post(req_url, data={"url": url, "capture_all": "on"})
     if req.status_code == 429:
         random_seconds = randint(1, 20)
         print(f"\nWait for {random_seconds} seconds")
         sleep(random_seconds)
 
-        req = save_url(url)
+        req = save_page(url)
     return req
 
 
