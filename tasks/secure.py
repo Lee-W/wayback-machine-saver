@@ -6,7 +6,7 @@ from tasks.common import VENV_PREFIX
 @task
 def check_package(ctx):
     """Check package security"""
-    ctx.run("poetry run safety", warn=True)
+    ctx.run("poetry run safety check", warn=True)
 
 
 @task

@@ -3,13 +3,13 @@
 ### Step 2. Clone the repository from your GitHub
 
 ```sh
-git clone https://github.com/[YOUR GITHUB ACCOUNT]/internet_archiver.git
+git clone https://github.com/[YOUR GITHUB ACCOUNT]/wayback-machine-saver.git
 ```
 
 ### Step 3. Add this repository to the remote in your local repository
 
 ```sh
-git remote add upstream "https://github.com/Lee-W/internet_archiver"
+git remote add upstream "https://github.com/Lee-W/wayback-machine-saver"
 ```
 
 You can pull the latest code in main branch through `git pull upstream main` afterward.

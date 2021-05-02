@@ -18,7 +18,7 @@ def docker(ctx):
     """Build docker image"""
     ctx.run("poetry export -f requirements.txt -o requirements.txt")
     user_name = "lee_w"
-    proj_name = "internet_archiver"
+    proj_name = "wayback_machine_saver"
     repo_name = f"{user_name}/{proj_name}"
     ctx.run(f"docker build -t {repo_name}:latest .")
 
