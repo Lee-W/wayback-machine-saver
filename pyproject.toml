@@ -97,6 +97,9 @@ license = "MIT license"
 readme = "docs/README.md"
 repository = "https://github.com/Lee-W/wayback-machine-saver"
 
+[tool.poetry.scripts]
+wayback-machine-saver = "wayback_machine_saver.__main__:main"
+
 [tool.poetry.dependencies]
 python = "^3.8"
 httpx = "^0.18.0"
