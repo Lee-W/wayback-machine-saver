@@ -1,5 +1,10 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg?style=flat-square)](https://conventionalcommits.org)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Github Actions](https://github.com/Lee-W/wayback-machine-saver/actions/workflows/python-check.yaml/badge.svg)](https://github.com/Lee-W/wayback-machine-saver/wayback-machine-saver/actions/workflows/python-check.yaml)
+[![PyPI Package latest release](https://img.shields.io/pypi/v/wayback_machine_saver.svg?style=flat-square)](https://pypi.org/project/wayback_machine_saver/)
+[![PyPI Package download count (per month)](https://img.shields.io/pypi/dm/wayback_machine_saver?style=flat-square)](https://pypi.org/project/wayback_machine_saver/)
+[![Supported versions](https://img.shields.io/pypi/pyversions/wayback_machine_saver.svg?style=flat-square)](https://pypi.org/project/wayback_machine_saver/)
 
 # Wayback Machine Saver
 
