@@ -24,7 +24,7 @@ def save_url(url: str) -> httpx.Response:
     return req
 
 
-def get_wayback_available(url: str) -> httpx.Response:
+def get_latest_archive(url: str) -> httpx.Response:
     # Clean up query
     url = urlunparse(urlparse(url)._replace(query=urlencode({}, True)))
     try:
@@ -38,5 +38,5 @@ def get_wayback_available(url: str) -> httpx.Response:
         print(f"\nWait for {random_seconds} seconds")
         sleep(random_seconds)
 
-        req = get_wayback_available(url)
+        req = get_latest_archive(url)
     return req

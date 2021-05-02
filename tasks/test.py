@@ -15,4 +15,4 @@ def run(ctx, allow_no_tests=False):
 @task
 def cov(ctx):
     """Run test covreage check"""
-    ctx.run(f"{VENV_PREFIX} pytest --cov=internet_archiver tests/", pty=True)
+    ctx.run(f"{VENV_PREFIX} pytest --cov=wayback_machine_saver tests/", pty=True)

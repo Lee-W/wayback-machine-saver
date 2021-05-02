@@ -1,3 +1,3 @@
 [bandit]
-targets: internet_archiver
+targets: wayback_machine_saver
 exclude: tests

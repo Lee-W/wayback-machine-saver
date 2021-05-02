@@ -9,7 +9,7 @@ assignees: ""
 ## Description
 <!-- A clear and concise description of what the bug is. -->
 
-## Internet Archiver version
+## Wayback Machine Saver version
 <!-- x.y.z or commit hash -->
 
 ## Steps to Reproduce

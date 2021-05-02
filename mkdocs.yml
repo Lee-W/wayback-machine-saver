@@ -1,9 +1,9 @@
-site_name: Internet Archiver
+site_name: Wayback Machine Saver
 nav:
   - Home: README.md
   - Contributing: contributing.md
 theme:
   name: 'material'
-repo_url: https://github.com/Lee-W/internet_archiver
+repo_url: https://github.com/Lee-W/wayback-machine-saver
 remote_branch: gh-pages
 remote_name: origin

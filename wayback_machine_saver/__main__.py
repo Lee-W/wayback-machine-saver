@@ -1,10 +1,10 @@
-from typing import List
 import csv
+from typing import List
 
 import click
 import httpx
 
-from internet_archiver import get_wayback_available, save_url
+from wayback_machine_saver import get_latest_archive, save_url
 
 
 @click.group()
@@ -63,7 +63,7 @@ def get_latest_archive_url(
         for url in urls_bar:
             click.echo(f"\nProcessing {url}")
             try:
-                req = get_wayback_available(url)
+                req = get_latest_archive(url)
                 closest_archive_url: str = str(req.url)
             except httpx.ReadTimeout:
                 click.echo(f"Failed on retrieving {url}", err=True)
