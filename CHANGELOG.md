@@ -1,4 +1,11 @@
 # Changelog
+## 0.3.0 (2021-05-07)
+
+### Feat
+
+- clean up tracking query in url and make timeout, retry configurable
+- add retry time and output timestamp
+
 ## 0.2.0 (2021-05-02)
 
 ### Refactor
