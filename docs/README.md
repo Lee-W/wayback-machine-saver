@@ -49,7 +49,7 @@ https://another-example.com
 #### options
 
 *  --deliminator TEXT         [default:  "\n"]
-*  --error-log-filename TEXT  [default: error-log.csv]
+*  --error-log-filename TEXT  [default: save-pages-error-log-"timestamp".csv]
 
 ## Get latest archive urls
 After the URLs have been saved, [Internet Archive - Wayback Machine](http://web.archive.org/) will snap-shot the page to their database and create a timestamp. You can access the latest one through `http://web.archive.org/web/[Your URL]` and it will be redirected to `http://web.archive.org/web/[timestamp]/[Your URL]`. This command is used to get the redirected URLs.
@@ -71,8 +71,17 @@ https://another-example.com
 #### options
 
 *  --deliminator TEXT         [default: "\n"]
-*  --output-filename TEXT     [default: retrieved_urls.csv]
-*  --error-log-filename TEXT  [default: error-log.csv]
+*  --output-filename TEXT     [default: retrieved-urls-"timestamp".csv]]
+*  --error-log-filename TEXT  [default: get-url-error-log-"timestamp".csv]
+
+## Configuration
+
+Wayback Machine Saves supports configurating through environment variable. You can run `export VARIABLE=VALUE` before running the script to change the behavior.
+
+* WAYBACK_MACHINE_SAVER_RETRY_TIMES
+    * times to retry (default: 3)
+* HTTPX_TIMEOUT
+    * timeout for all GET operations (default: 10)
 
 ## Contributing
 See [Contributing](contributing.md)
