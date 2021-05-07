@@ -322,6 +322,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contributing" class="md-nav__link">
     Contributing
   </a>
@@ -478,6 +485,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#contributing" class="md-nav__link">
     Contributing
   </a>
@@ -543,7 +557,7 @@ https://another-example.com
 <h4 id="options">options</h4>
 <ul>
 <li>--deliminator TEXT         [default:  "\n"]</li>
-<li>--error-log-filename TEXT  [default: error-log.csv]</li>
+<li>--error-log-filename TEXT  [default: save-pages-error-log-"timestamp".csv]</li>
 </ul>
 <h2 id="get-latest-archive-urls">Get latest archive urls</h2>
 <p>After the URLs have been saved, <a href="http://web.archive.org/">Internet Archive - Wayback Machine</a> will snap-shot the page to their database and create a timestamp. You can access the latest one through <code>http://web.archive.org/web/[Your URL]</code> and it will be redirected to <code>http://web.archive.org/web/[timestamp]/[Your URL]</code>. This command is used to get the redirected URLs.</p>
@@ -560,8 +574,20 @@ https://another-example.com
 <h4 id="options_1">options</h4>
 <ul>
 <li>--deliminator TEXT         [default: "\n"]</li>
-<li>--output-filename TEXT     [default: retrieved_urls.csv]</li>
-<li>--error-log-filename TEXT  [default: error-log.csv]</li>
+<li>--output-filename TEXT     [default: retrieved-urls-"timestamp".csv]]</li>
+<li>--error-log-filename TEXT  [default: get-url-error-log-"timestamp".csv]</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Wayback Machine Saves supports configurating through environment variable. You can run <code>export VARIABLE=VALUE</code> before running the script to change the behavior.</p>
+<ul>
+<li>WAYBACK_MACHINE_SAVER_RETRY_TIMES<ul>
+<li>times to retry (default: 3)</li>
+</ul>
+</li>
+<li>HTTPX_TIMEOUT<ul>
+<li>timeout for all GET operations (default: 10)</li>
+</ul>
+</li>
 </ul>
 <h2 id="contributing">Contributing</h2>
 <p>See <a href="contributing/">Contributing</a></p>
