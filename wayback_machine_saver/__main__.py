@@ -1,5 +1,7 @@
 import csv
 from dataclasses import dataclass
+from datetime import datetime
+from time import sleep
 from typing import List
 
 import click
@@ -24,6 +26,9 @@ def _export_failed_log(failed_logs: List[FailedLog], error_log_filename: str) ->
     click.echo(f"\nFailed logs has been written into {error_log_filename}")
 
 
+current_timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+
+
 @click.group()
 def main() -> None:
     pass
@@ -33,10 +38,14 @@ def main() -> None:
 @click.argument("filename", type=click.Path(exists=True))
 @click.option("--deliminator", type=str, default="\n", show_default=True)
 @click.option(
-    "--error-log-filename", type=str, default="error-log.csv", show_default=True
+    "--error-log-filename",
+    type=str,
+    default=f"save-pages-error-log-{current_timestamp}.csv",
+    show_default=True,
 )
 def save_pages(filename: str, deliminator: str, error_log_filename: str) -> None:
     """Save URLs from input file to Internet Archive"""
+
     with open(filename, "r") as input_file:
         urls = input_file.read().strip().split(deliminator)
 
@@ -46,8 +55,12 @@ def save_pages(filename: str, deliminator: str, error_log_filename: str) -> None
             click.echo(f"\nProcessing {url}")
             try:
                 req = save_page(url)
-            except (httpx.ConnectError, httpx.ConnectTimeout) as err:
-                click.secho(f"\nFailed on saving {url}", err=True, fg="red")
+            except Exception as err:
+                click.secho(
+                    f"\nFailed on saving {url}\nError message: {err}",
+                    err=True,
+                    fg="red",
+                )
                 failed_logs.append(FailedLog(url, str(err)))
             else:
                 if req.status_code == 200:
@@ -70,10 +83,16 @@ def save_pages(filename: str, deliminator: str, error_log_filename: str) -> None
 @click.argument("filename", type=click.Path(exists=True))
 @click.option("--deliminator", type=str, default="\n", show_default=True)
 @click.option(
-    "--output-filename", type=str, default="retrieved_urls.csv", show_default=True
+    "--output-filename",
+    type=str,
+    default=f"retrieved-urls-{current_timestamp}.csv",
+    show_default=True,
 )
 @click.option(
-    "--error-log-filename", type=str, default="error-log.csv", show_default=True
+    "--error-log-filename",
+    type=str,
+    default=f"get-url-error-log-{current_timestamp}.csv",
+    show_default=True,
 )
 def get_latest_archive_urls(
     filename: str, deliminator: str, output_filename: str, error_log_filename: str
@@ -98,9 +117,14 @@ def get_latest_archive_urls(
                 click.secho(f"Failed on retrieving {url}", err=True, fg="red")
                 retrieved_urls.append("Connect time out. Possibly a dead page.")
                 failed_logs.append(FailedLog(url, str(err)))
+            except Exception as err:
+                click.secho(f"Failed on retrieving {url}", err=True, fg="red")
+                retrieved_urls.append(str(err))
+                failed_logs.append(FailedLog(url, str(err)))
             else:
                 click.secho(f"Result URL: {latests_archive_url}", fg="green")
                 retrieved_urls.append(latests_archive_url)
+            sleep(1)
 
     if failed_logs:
         _export_failed_log(failed_logs, error_log_filename)
