@@ -7,7 +7,7 @@ from typing import List
 import click
 import httpx
 
-from wayback_machine_saver import get_latest_archive, save_page
+from wayback_machine_saver import get_latest_archive, save_page  # type: ignore
 
 
 @dataclass
