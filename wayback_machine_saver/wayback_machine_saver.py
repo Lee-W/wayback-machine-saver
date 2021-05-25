@@ -3,7 +3,12 @@ from time import sleep
 from urllib.parse import parse_qs, urlencode, urljoin, urlparse, urlunparse
 
 import httpx
-from config import _REMOVED_URL_QUERY, HTTPX_TIMEOUT, WAYBACK_MACHINE_SAVER_RETRY_TIMES
+
+from wayback_machine_saver.config import (
+    _REMOVED_URL_QUERY,
+    HTTPX_TIMEOUT,
+    WAYBACK_MACHINE_SAVER_RETRY_TIMES,
+)
 
 INTERNET_ARCHIVE_DOMAIN = "https://web.archive.org/"
 INTERNET_ARCHIVE_SAVE_URL = urljoin(INTERNET_ARCHIVE_DOMAIN, "save/")
