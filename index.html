@@ -544,7 +544,7 @@
 <h2 id="usage">Usage</h2>
 <h3 id="save-pages">Save pages</h3>
 <p>Save URLs from the input file to <a href="http://web.archive.org/">Internet Archive - Wayback Machine</a></p>
-<pre><code class="language-sh">wayback_machine_saver save-pages FILENAME
+<pre><code class="language-sh">wayback-machine-saver save-pages FILENAME
 </code></pre>
 <h4 id="argument">Argument</h4>
 <ul>
@@ -561,7 +561,7 @@ https://another-example.com
 </ul>
 <h2 id="get-latest-archive-urls">Get latest archive urls</h2>
 <p>After the URLs have been saved, <a href="http://web.archive.org/">Internet Archive - Wayback Machine</a> will snap-shot the page to their database and create a timestamp. You can access the latest one through <code>http://web.archive.org/web/[Your URL]</code> and it will be redirected to <code>http://web.archive.org/web/[timestamp]/[Your URL]</code>. This command is used to get the redirected URLs.</p>
-<pre><code class="language-sh">wayback_machine_saver get-latest-archive-urls FILENAME
+<pre><code class="language-sh">wayback-machine-saver get-latest-archive-urls FILENAME
 </code></pre>
 <h4 id="argument_1">Argument</h4>
 <ul>
