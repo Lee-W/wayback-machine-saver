@@ -33,7 +33,7 @@ pipx install wayback-machine-saver
 Save URLs from the input file to [Internet Archive - Wayback Machine](http://web.archive.org/)
 
 ```sh
-wayback_machine_saver save-pages FILENAME
+wayback-machine-saver save-pages FILENAME
 ```
 
 #### Argument
@@ -55,7 +55,7 @@ https://another-example.com
 After the URLs have been saved, [Internet Archive - Wayback Machine](http://web.archive.org/) will snap-shot the page to their database and create a timestamp. You can access the latest one through `http://web.archive.org/web/[Your URL]` and it will be redirected to `http://web.archive.org/web/[timestamp]/[Your URL]`. This command is used to get the redirected URLs.
 
 ```sh
-wayback_machine_saver get-latest-archive-urls FILENAME
+wayback-machine-saver get-latest-archive-urls FILENAME
 ```
 
 #### Argument
