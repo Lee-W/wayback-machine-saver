@@ -1,4 +1,10 @@
 # Changelog
+## 0.3.1 (2021-05-25)
+
+### Fix
+
+- cli import path
+
 ## 0.3.0 (2021-05-07)
 
 ### Feat
